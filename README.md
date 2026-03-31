@@ -57,4 +57,5 @@ There is **no real hardware or physical measurement system**.
 - This is a **decision-making simulation under uncertainty**.
 - The project investigates classification, probability modeling, and Markov chains—not real robotics.
 - No hardware, sensors, or real-world data are used; everything is artificially generated and conceptual.
+- This project was developed as part of a **university coursework assignment** in the context of a software engineering curriculum.
 
