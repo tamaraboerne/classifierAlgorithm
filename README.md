@@ -1,45 +1,60 @@
-# Projekt: Autonomes Fahrzeug – Klassifikation für Rückkehr zur Basis
+# Project: Autonomous Vehicle – *Theoretical* Classifier for Return-to-Base Decision
 
-Dieses Repository enthält den Code und die Dokumentation für ein Projekt, in dem ein **autonomes Fahrzeug** ein großes Gelände erkundet. Ziel ist es, einen **Klassifikator** zu entwickeln, der erkennt, wann das Fahrzeug zur Basis zurückkehren muss, um Schäden zu vermeiden.
+This repository provides the code and documentation for a simulation of an imagined autonomous vehicle operating within a virtual environment. The project deals exclusively with the decision-making logic that determines when the vehicle ought to return to base to prevent potential, simulated hazards.
 
-## Ausgangssituation
+---
 
-* Das Fahrzeug erkundet eigenständig ein Gelände.
-* In bestimmten Situationen muss die Erkundung **abgebrochen und zur Basis zurückgekehrt** werden, um Schäden zu vermeiden.
-* Die Entscheidung zur Rückkehr soll das Fahrzeug **autonom** treffen.
+## Conceptual Scenario (Fully Simulated)
 
-## Kostenmodell
+- A fictional autonomous vehicle explores a virtual area.
+- In certain simulated situations, exploration should be **terminated** and the vehicle should theoretically **return to base** to avoid imagined damage.
+- The return decision is made entirely in software through a **classification algorithm**.
 
-* Weiterfahren trotz notwendiger Rückkehr → **Kosten = 8**
-* Rückkehr im richtigen Moment → **Kosten = 2**
-* Rückkehr, obwohl nicht nötig → **Kosten = 4**
-* Ziel: **minimierung der Gesamtkosten**.
+---
 
-## Sensordaten
+## Cost Model (Hypothetical)
 
-* Das Fahrzeug besitzt ein Sensorsystem, das **zeitlich aufeinanderfolgende Messwert-Sequenzen** liefert.
-* Jeder Messwert ist eine einzelne ganze Zahl.
-* Beispiel für eine Sequenz: `49 21 54 35 23 ...`
+In the theoretical scenario, each decision is assigned an artificial cost:
 
-## Klassifikationsaufgabe
+- Continuing exploration when return would have been correct → **Cost = 8**
+- Returning at the correct moment → **Cost = 2**
+- Returning unnecessarily → **Cost = 4**
 
-* Aufgabe: Erkennen, ob eine Sequenz eine **gefährliche Situation** (Rückkehr nötig) oder **harmlose Situation** (Erkundung fortsetzen) darstellt.
-* Historische Daten zeigen Unterschiede in den Abfolgen der Sensorwerte zwischen gefährlichen und harmlosen Situationen.
-* Klassifikation kann mittels **Markovkette erster Ordnung** erfolgen.
-* Wahrscheinlichkeiten: 90% harmlose Situationen, 10% gefährliche Situationen.
+**Goal:** Minimize **total simulated cost** through correct classification decisions.
 
-## Zielsetzung
+---
 
-* Entwicklung eines Klassifikators, der basierend auf den Sensordaten **korrekt entscheidet**, wann eine Rückkehr zur Basis notwendig ist.
-* Minimierung der **Betriebskosten** durch richtige Entscheidungen.
+## Simulated Sensor Data
 
-## Hinweise
+- The “vehicle” produces **synthetic sequences of integer measurements**, representing fictional sensor readings.
+- These sequences are generated purely in software.
+- Example: `49 21 54 35 23 ...`
 
-* Das Projekt simuliert **entscheidungsbasierte Klassifikation unter Unsicherheit**.
-* Optimierung kann z. B. über die Analyse von Übergangswahrscheinlichkeiten und Sequenzmustern erfolgen.
+There is **no real hardware or physical measurement system**.
 
-## Kontakt
+---
 
-* **Autorin:** Tamara Boerner
-* **Projekt:** Autonomes Fahrzeug – Klassifikation für Rückkehr zur Basis
-* **Hochschule:** TH Lübeck, Studiengang Informatik/Softwaretechnik
+## Classification Task (Theoretical Model)
+
+- The software must decide whether a sequence represents a **dangerous situation** (→ return required) or a **harmless situation** (→ continue).
+- Historical simulation data shows differing sequence patterns between dangerous and harmless events.
+- A **first-order Markov chain** is used as the classification model.
+- Prior probabilities used in the simulation:
+  - **90% harmless**
+  - **10% dangerous**
+
+---
+
+## Project Objective
+
+- Develop a **software-only classifier** that makes the correct decision about when a hypothetical vehicle should “return to base.”
+- Minimize simulated operational costs by avoiding incorrect decisions.
+
+---
+
+## Notes
+
+- This is a **decision-making simulation under uncertainty**.
+- The project investigates classification, probability modeling, and Markov chains—not real robotics.
+- No hardware, sensors, or real-world data are used; everything is artificially generated and conceptual.
+
